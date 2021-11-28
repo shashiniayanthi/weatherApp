@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-app.use('/css',express.static(__dirname + "public/css"));
+app.use('/css',express.static(__dirname + "public/CSS"));
 app.use('/images',express.static(__dirname + "public/images"));
 
 var weatherWeekly = [];
