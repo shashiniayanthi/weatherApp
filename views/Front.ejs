@@ -1,0 +1,141 @@
+<%- include("partials/header"); -%>
+
+
+<div style="padding-left: 1072px;">
+  <a class="btn btn-info btn-md btn-rounded" href="/logout" role="button">Log Out</a>
+</div> 
+
+<div class="form-top">
+  <form action="/Front" class="find-location"  method="POST">
+    <input type="text" placeholder="latitude, longitude", name="coordinates">
+    <input type="submit" value="Find">
+  </form>
+
+  <div style="padding-left: 1072px;"><a style="color: #111312;" class="button" onclick="toggleFunction()">More</a></div> 
+</div>
+
+
+<div class="forecast-container">
+  
+  <div class="today forecast">
+    <div class="forecast-header">
+      <div class="day"><%=today.dayName %></div>
+      <div class="date"><%=today.dateNo %></div>
+    </div> 
+    <div class="forecast-content"> 
+      <div class="location"><%=today.city %></div>
+      <div class="degree">
+        <div class="num"><%=today.Temperature %><sup>o</sup>C</div>
+        <div class="forecast-icon" style="position: relative;">
+          <img src="http://openweathermap.org/img/wn/<%=today.weatherIcon %>@2x.png" alt="" width=90 style=" position: absolute; top: -41px; left: 70px; width: 140%;">
+        </div>	
+      </div>
+      <span><img src="images/icon-umberella@2x.png" alt="" style="width: 23px; height: 21px;"><%=today.humidity%> %</span>
+      <span><img src="images/icon-wind.png" alt=""><%=today.windSpeed %> km/h</span>
+    </div>
+  </div>
+      
+  <div class="forecast">
+    <div class="forecast-header">
+      <% const [a,b,c,d,e,f] = weekly; %>
+      <div class="day"><%=a.weekDay %></div>
+    </div>
+    <div class="forecast-content">
+      <div class="forecast-icon">
+        <img src="http://openweathermap.org/img/wn/<%=a.weekIcon %>@2x.png"  alt="" width=100>
+      </div>
+      <div class="degree"><%=a.weekTemperature %><sup>o</sup>C</div>
+      <small><%=a.weekFeelsLike %><sup>o</sup></small>
+    </div>
+  </div>
+
+  <div class="forecast">
+    <div class="forecast-header">
+      <div class="day"><%=b.weekDay %></div>
+    </div>
+    <div class="forecast-content">
+      <div class="forecast-icon">
+        <img src="http://openweathermap.org/img/wn/<%=b.weekIcon %>@2x.png"  alt="" width=100>
+      </div>
+      <div class="degree"><%=b.weekTemperature %><sup>o</sup>C</div>
+      <small><%=b.weekFeelsLike %><sup>o</sup></small>
+    </div>
+  </div>
+  
+  <div id="target" style="display: none">
+    <div class="forecast">
+      <div class="forecast-header">
+        <div class="day"><%=c.weekDay %></div>
+      </div>
+      <div class="forecast-content">
+        <div class="forecast-icon">
+          <img src="http://openweathermap.org/img/wn/<%=c.weekIcon %>@2x.png"  alt="" width=100>
+        </div>
+        <div class="degree"><%=c.weekTemperature %><sup>o</sup>C</div>
+        <small><%=c.weekFeelsLike %><sup>o</sup></small>
+      </div>
+    </div>
+
+    <div class="forecast">
+      <div class="forecast-header">
+        <div class="day"><%=d.weekDay %></div>
+      </div>
+      <div class="forecast-content">
+        <div class="forecast-icon">
+          <img src="http://openweathermap.org/img/wn/<%=d.weekIcon %>@2x.png"  alt="" width=100>
+        </div>
+        <div class="degree"><%=d.weekTemperature %><sup>o</sup>C</div>
+        <small><%=d.weekFeelsLike %><sup>o</sup></small>
+      </div>
+    </div>
+
+    <div class="forecast">
+      <div class="forecast-header">
+        <div class="day"><%=e.weekDay %></div>
+      </div>
+      <div class="forecast-content">
+        <div class="forecast-icon">
+          <img src="http://openweathermap.org/img/wn/<%=e.weekIcon %>@2x.png"  alt="" width=100>
+        </div>
+        <div class="degree"><%=e.weekTemperature %><sup>o</sup>C</div>
+        <small><%=e.weekFeelsLike %><sup>o</sup></small>
+      </div>
+    </div>
+
+    <div class="forecast">
+      <div class="forecast-header">
+        <div class="day"><%=f.weekDay %></div>
+      </div>
+      <div class="forecast-content">
+        <div class="forecast-icon">
+          <img src="http://openweathermap.org/img/wn/<%=f.weekIcon %>@2x.png"  alt="" width=100>
+        </div>
+        <div class="degree"><%=f.weekTemperature %><sup>o</sup>C</div>
+        <small><%=f.weekFeelsLike %><sup>o</sup></small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-top" style="background: #111312; margin: inherit;text-align: -webkit-center; padding-top: 20px; width: fit-content; margin-left: 250px; font-family: Dancing Script;"> 
+  <p>For latitude of south Plase use (-) before value. For longitude of west Plase use (-) before value.</p>
+  <p>Ex 1: For cordinates 51.5072° N, 0.1276° W Enter 51.50,-0.12</p>
+  <p>Ex 2: For cordinates37.8136° S, 144.9631° E Enter -37.81,144.96</p>
+</div>
+
+
+<script>
+  function toggleFunction() {
+    //console.log("click")
+    var x = document.getElementById("target");
+    if (x.style.display === "none") {
+      x.style.display = "contents";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  </script>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<%- include("partials/footer"); -%>
