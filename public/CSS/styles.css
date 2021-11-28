@@ -1,7 +1,6 @@
-/*author:starttemplate*/
-/*reference site : starttemplate.com*/
+
 body {
-    background-image:url('https://www.reallusion.com/ContentStore/CTA/Pack/G3-Animation-Suite-Weather-Maker/images/sunny.jpg');
+    background-image:url('/images/sunny.jpg');
     background-position:center;
     background-size:cover;
     
