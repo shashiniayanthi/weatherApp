@@ -38,6 +38,7 @@
   <div class="forecast">
     <div class="forecast-header">
       <% const [a,b,c,d,e,f] = weekly; %>
+      <% console.log(d); %>
       <div class="day"><%=a.weekDay %></div>
     </div>
     <div class="forecast-content">
@@ -62,19 +63,20 @@
     </div>
   </div>
   
-  <div id="target" style="display: none">
-    <div class="forecast">
-      <div class="forecast-header">
-        <div class="day"><%=c.weekDay %></div>
-      </div>
-      <div class="forecast-content">
-        <div class="forecast-icon">
-          <img src="http://openweathermap.org/img/wn/<%=c.weekIcon %>@2x.png"  alt="" width=100>
-        </div>
-        <div class="degree"><%=c.weekTemperature %><sup>o</sup>C</div>
-        <small><%=c.weekFeelsLike %><sup>o</sup></small>
-      </div>
+  <div class="forecast">
+    <div class="forecast-header">
+      <div class="day"><%=c.weekDay %></div>
     </div>
+    <div class="forecast-content">
+      <div class="forecast-icon">
+        <img src="http://openweathermap.org/img/wn/<%=c.weekIcon %>@2x.png"  alt="" width=100>
+      </div>
+      <div class="degree"><%=c.weekTemperature %><sup>o</sup>C</div>
+      <small><%=c.weekFeelsLike %><sup>o</sup></small>
+    </div>
+  </div>
+  
+  <div id="target" style="display: none">    
 
     <div class="forecast">
       <div class="forecast-header">
@@ -114,7 +116,7 @@
         <small><%=f.weekFeelsLike %><sup>o</sup></small>
       </div>
     </div>
-  </div>
+  </div> 
 </div>
 
 <div class="form-top" style="background: #111312; margin: inherit;text-align: -webkit-center; padding-top: 20px; width: fit-content; margin-left: 250px; font-family: Dancing Script;"> 

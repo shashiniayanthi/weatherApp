@@ -92,73 +92,73 @@ body {
     margin-bottom: 50px;
     color: white;
 }
-    .forecast-container .forecast {
+.forecast-container .forecast {
         display: table-cell;
         vertical-align: top; }
-  .forecast-container .forecast:nth-child(even) {
+.forecast-container .forecast:nth-child(even) {
           background-color: #262936; }
         @media screen and (max-width: 990px) {
-  .forecast-container .forecast {
+.forecast-container .forecast {
             display: block;
             width: 16.6667%;
             float: left; } }
-  .forecast-container .forecast.today {
+.forecast-container .forecast.today {
           width: 420px; }
-  .forecast-container .forecast.today .forecast-header {
+.forecast-container .forecast.today .forecast-header {
             *zoom: 1; }
-  .forecast-container .forecast.today .forecast-header:after {
+.forecast-container .forecast.today .forecast-header:after {
               content: " ";
               clear: both;
               display: block;
               overflow: hidden;
               height: 0; }
-  .forecast-container .forecast.today .forecast-header .day {
+.forecast-container .forecast.today .forecast-header .day {
               float: left; }
-  .forecast-container .forecast.today .forecast-header .date {
+.forecast-container .forecast.today .forecast-header .date {
               float: right; }
-  .forecast-container .forecast.today .forecast-content {
+.forecast-container .forecast.today .forecast-content {
             text-align: left;
             padding-top: 30px;
             padding-bottom: 30px; }
-  .forecast-container .forecast.today .location {
+.forecast-container .forecast.today .location {
             font-size: 18px;
             font-size: 1.2857142857em;
             font-weight: 400; }
-  .forecast-container .forecast.today .degree .num, .forecast-container .forecast.today .degree .forecast-icon {
+.forecast-container .forecast.today .degree .num, .forecast-container .forecast.today .degree .forecast-icon {
             display: inline-block;
             width: 100px;
             vertical-align: middle; }
-  .forecast-container .forecast.today .degree .num {
+.forecast-container .forecast.today .degree .num {
             font-size: 90px;
             font-size: 6.4285714286rem;
             margin-right: 30px; }
-  .forecast-container .forecast.today span {
+.forecast-container .forecast.today span {
             margin-right: 20px; }
-  .forecast-container .forecast.today span img {
+.forecast-container .forecast.today span img {
               margin-right: 5px;
               vertical-align: middle; }
           @media screen and (max-width: 990px) {
-  .forecast-container .forecast.today {
+.forecast-container .forecast.today {
               display: block;
               width: 100%; } }
-  .forecast-container .forecast .forecast-header {
+.forecast-container .forecast .forecast-header {
           background: rgba(0, 0, 0, 0.1);
           padding: 10px;
           text-align: center;
           font-weight: 400; }
-  .forecast-container .forecast .forecast-icon {
+.forecast-container .forecast .forecast-icon {
           height: 100px; }
-  .forecast-container .forecast .forecast-content {
+.forecast-container .forecast .forecast-content {
           padding: 50px 20px 10px;
           text-align: center; }
-  .forecast-container .forecast .forecast-content .forecast-icon {
+.forecast-container .forecast .forecast-content .forecast-icon {
             margin-bottom: 20px; }
-  .forecast-container .forecast .forecast-content .degree {
+.forecast-container .forecast .forecast-content .degree {
             font-size: 24px;
             font-size: 1.7142857143em;
             color: white;
             font-weight: 700; }
-  .forecast-container .forecast .forecast-content small {
+.forecast-container .forecast .forecast-content small {
             font-size: 16px;
             font-size: 1.1428571429em; }
   
