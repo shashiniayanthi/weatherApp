@@ -1,16 +1,16 @@
 <%- include("partials/header"); -%>
 
 
-<div style="padding-left: 1072px;">
+<div class="logout-div">
   <a class="btn btn-info btn-md btn-rounded" href="/logout" role="button">Log Out</a>
 </div> 
 
 <div class="form-top">
   <form action="/Front" class="find-location"  method="POST">
     <input type="text" placeholder="latitude, longitude", name="coordinates">
-    <input type="submit" value="Find">
+    <input type="submit" value="Search">
   </form>
-  <div style="padding-left: 1072px;padding-bottom: 50px;"><a style="color: #36454F;" class="button" onclick="toggleFunction()">More</a></div> 
+  <div style="padding-left: 1010px;padding-bottom: 40px;"><a class="more-button" onclick="toggleFunction()">More</a></div> 
 </div>
 
 <div class="forecast-container">
@@ -116,7 +116,7 @@
   </div> 
 </div>
 
-<div class="form-top" style="background: #111312; margin: inherit;text-align: -webkit-center; padding-top: 20px; width: fit-content; margin-left: 250px; font-family: Dancing Script;"> 
+<div class="form-top instruction-div" > 
   <p>For latitude of south Plase use (-) before value. For longitude of west Plase use (-) before value.</p>
   <p>Ex 1: For cordinates 51.5072° N, 0.1276° W Enter 51.50,-0.12</p>
   <p>Ex 2: For cordinates37.8136° S, 144.9631° E Enter -37.81,144.96</p>
