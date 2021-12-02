@@ -248,6 +248,7 @@ html, button, input, select, textarea {
     padding: 3px 18px 3px 18px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     text-decoration: none;
+    cursor: pointer;
   }
 
 .instruction-div{
