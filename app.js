@@ -160,7 +160,54 @@ app.post("/Login", function(req, res){
 });
 
 app.get("/", function (req, res){
-    res.render("Home");
+    const latti = "6.92";
+                    const long = "79.86";
+                    const url = "https://api.openweathermap.org/data/2.5/onecall?lat="+ latti +"&lon="+ long +"&exclude="+ excludes +"&appid="+appKey +"&units="+  unit;
+                
+                
+                    https.get(url, function(respoense){
+                        //console.log(respoense);
+                        console.log(respoense.statusCode);
+                
+                        respoense.on("data", function(data){
+                            const weatherData = JSON.parse(data);
+                
+                            const today = weatherData.daily[0].dt;
+                            var tday = Date.getDayandDate(today);
+                
+                            const date = weatherData.daily[0].dt;
+                            var day = Date.getDate(date);
+                
+                            const weatherToday = {
+                                dayName:day, 
+                                dateNo:tday, 
+                                city:weatherData.timezone,
+                                Temperature:parseInt(weatherData.current.temp),
+                                humidity:weatherData.current.humidity,
+                                windSpeed:parseInt(weatherData.current.wind_speed*3.6),
+                                weatherIcon:weatherData.current.weather[0].icon
+                            };
+                
+                            for(let i=1; i<7; i++){
+                
+                                var wDay = Date.getDate(weatherData.daily[i].dt);
+                
+                                const weatherDay = {
+                                    weekDay: wDay,
+                                    weekTemperature: parseInt(weatherData.daily[i].temp.day),
+                                    weekFeelsLike: parseInt(weatherData.daily[i].feels_like.day),
+                                    weekIcon: weatherData.daily[i].weather[0].icon
+                                };
+                                weatherWeekly.push(weatherDay);
+                            };
+                            res.render("Front",{
+                                today : weatherToday,
+                                weekly : weatherWeekly
+                            });
+                            weatherWeekly.length = 0;
+                        });
+                        
+                    });
 });
 
 app.get("/Login", function (req, res){
