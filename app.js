@@ -20,7 +20,7 @@ const appKey = "d075ee48469b733041d6b9da01b9af90"
 const unit = "metric";
 const excludes = "minutely,hourly,alert";
 
-mongoose.connect("mongodb+srv://admin-shashini:test123@cluster0.lu5oe.mongodb.net/WeatheruserDB");
+mongoose.connect("mongodb+srv://admin-shashini:test123@>@cluster0.lu5oe.mongodb.net/?retryWrites=true&w=majority/WeatheruserDB");
 
 const weatheruserSchema = {
     email: String,
